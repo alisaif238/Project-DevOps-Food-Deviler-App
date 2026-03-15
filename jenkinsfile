@@ -67,7 +67,7 @@ pipeline {
         stage('Docker Scout Image') {
             steps {
                 script{
-                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
+                   withDockerRegistry(credentialsId: 'docker'){
                        sh 'docker-scout quickview saifali238/zomato:latest'
                        sh 'docker-scout cves saifali238/zomato:latest'
                        sh 'docker-scout recommendations saifali238/zomato:latest'
